@@ -30,3 +30,10 @@ export interface ITodo{
     title:string;
     completed:boolean;
 }
+export interface IPhotos{
+    id:number;
+    albumId:number;
+    title:string;
+    url:string;
+    thumbnailUrl:string;
+}
