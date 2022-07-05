@@ -2,11 +2,11 @@ export interface IUser {
     id: number;
     name: string;
     username: string;
-    email: string;
-    address: IAddress;
-    phone: string;
-    website: string;
-    company: ICompany;
+    email?: string;
+    address?: IAddress;
+    phone?: string;
+    website?: string;
+    company?: ICompany;
 }
 
 export interface IAddress {
@@ -50,6 +50,7 @@ interface FetchUserSuccessAction {
     payload: IUser[]
 
 }
+
 
 interface FetchUserErrorAction {
     type: UserActionTypes.FETCH_USERS_ERROR,
