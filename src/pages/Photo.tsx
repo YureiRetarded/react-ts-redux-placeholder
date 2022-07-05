@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-const Photo:FC = () => {
+const Photo: FC = () => {
     return (
         <div>
             Одна фотография
