@@ -5,6 +5,7 @@ const Posts:FC = () => {
     return (
         <div>
             <PostsList/>
+
         </div>
     );
 };
