@@ -37,3 +37,14 @@ export interface IPhotos{
     url:string;
     thumbnailUrl:string;
 }
+export interface IAlbum{
+    id:number;
+    userId:number;
+    title:string;
+}
+export interface IPost{
+    id:number;
+    userId:number;
+    title:string;
+    body:string;
+}
