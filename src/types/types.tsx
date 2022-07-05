@@ -24,3 +24,9 @@ export interface ICompany{
     catchPhrase:string;
     bs:string;
 }
+export interface ITodo{
+    id:number;
+    userId:number;
+    title:string;
+    completed:boolean;
+}
