@@ -2,6 +2,7 @@ import React, {FC, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
+import {IUser} from "../types/user";
 
 type UserItemPageParams = {
     id: string
@@ -9,6 +10,7 @@ type UserItemPageParams = {
 const User: FC = () => {
     const params = useParams<UserItemPageParams>()
     const {users,loading,error}=useTypedSelector(state => state.user)
+    let user:IUser|undefined;
     const {fetchUser}=useActions()
     useEffect(()=>{
 
@@ -35,9 +37,9 @@ const User: FC = () => {
     return (
 
         <div>
-            {users.map(user =>
-                <div key={user.id}>{user.id}---{user.name}</div>
-            )}
+            <div>
+                {users[0]?.name}
+            </div>
         </div>
     );
 };
