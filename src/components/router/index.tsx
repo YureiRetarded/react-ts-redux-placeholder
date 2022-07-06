@@ -2,7 +2,7 @@ import Home from "../../pages/Home";
 import Users from "../../pages/Users";
 import User from "../../pages/User";
 import NotFoundPage from "../../pages/NotFoundPage";
-import Posts from "../../pages/Posts";
+import Posts from "../../pages/Posts/Posts";
 import Post from "../../pages/Post";
 import Albums from "../../pages/Albums";
 import Photos from "../../pages/Photos";
