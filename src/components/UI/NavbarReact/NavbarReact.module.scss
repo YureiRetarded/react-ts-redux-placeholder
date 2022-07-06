@@ -1,0 +1,9 @@
+.navbar_btn {
+  text-decoration: none;
+  color: white;
+  transition-duration: 0.2s;
+  &:hover {
+    transition-duration: 0.2s;
+    color: gray;
+  }
+}
