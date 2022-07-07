@@ -10,7 +10,6 @@ type UserItemPageParams = {
 const User: FC = () => {
     const params = useParams<UserItemPageParams>()
     const {users,loading,error}=useTypedSelector(state => state.user)
-    let user:IUser|undefined;
     const {fetchUser}=useActions()
     useEffect(()=>{
 

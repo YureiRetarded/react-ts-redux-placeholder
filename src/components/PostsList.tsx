@@ -1,6 +1,8 @@
 import React, {FC, useEffect} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
+import PostItem from "./PostItem";
+import {Stack} from "react-bootstrap";
 
 const PostsList: FC = () => {
     const {posts, loading, error} = useTypedSelector(state => state.post)
@@ -9,11 +11,11 @@ const PostsList: FC = () => {
         fetchPosts()
     },[])
     return (
-        <div>
+        <Stack gap={5} >
             {posts.map(post=>
-                <div>{post.title}</div>
+                <PostItem key={post.id} post={post} />
             )}
-        </div>
+        </Stack>
     );
 };
 
