@@ -8,19 +8,21 @@ import {Stack} from "react-bootstrap";
 const PostsList: FC = () => {
     const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.post)
     const {fetchPosts, setPostPage} = useActions()
-    const observer=useRef<IntersectionObserver>();
-    const targetRef=useRef<HTMLDivElement>(null)
+    const observer = useRef<IntersectionObserver>();
+    const targetRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         fetchPosts(limit, page)
     }, [page])
 
     useEffect(() => {
-        let callback = function(entries:any, observer:any) {
-            if(entries[0].isIntersecting){
+        if (loading) return
+        if (observer.current) observer.current?.disconnect()
+        let callback = function (entries: any, observer: any) {
+            if (entries[0].isIntersecting && page < totalPage) {
 
-                console.log('Текущяя страница '+page)
-                console.log('Ожидаемая страница '+(page+1))
-                console.log('Всего страниц '+totalPage)
+                console.log('Текущяя страница ' + page)
+                console.log('Ожидаемая страница ' + (page + 1))
+                console.log('Всего страниц ' + totalPage)
                 setPostPage(page + 1)
             }
         };
@@ -32,9 +34,6 @@ const PostsList: FC = () => {
         if (page != totalPage) {
             setPostPage(page + 1)
         }
-        console.log('Текущяя страница '+page)
-        console.log('Ожидаемая страница '+(page+1))
-        console.log('Всего страниц '+totalPage)
     }
     return (
         <Stack gap={5}>
@@ -42,7 +41,7 @@ const PostsList: FC = () => {
             {posts.map(post =>
                 <PostItem key={post.id} post={post}/>
             )}
-            <div ref={targetRef} style={{height:25, backgroundColor:"black"}}/>
+            <div ref={targetRef}/>
         </Stack>
     );
 };
