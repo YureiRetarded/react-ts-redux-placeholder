@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const NavbarReact: FC = () => {
     return (
-        <Navbar bg='dark' variant='dark'>
+        <Navbar bg='white'>
             <Container>
                 <Navbar.Toggle aria-controls='basic-navbar-nav'/>
                 <Navbar.Collapse id="basic-navbar-nav">
