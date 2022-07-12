@@ -1,11 +1,14 @@
 import {PostAction, PostActionTypes, PostState} from "../../types/post";
+import {Axios} from "axios";
 
 const initialState: PostState = {
     posts: [],
     page: 1,
     error: null,
     limit: 10,
-    loading: false
+    loading: false,
+    totalCount:0,
+    totalPage:0
 }
 
 export const postReducer = (state = initialState, action: PostAction): PostState => {
@@ -13,11 +16,15 @@ export const postReducer = (state = initialState, action: PostAction): PostState
         case PostActionTypes.FETCH_POSTS:
             return {...state, loading: true}
         case PostActionTypes.FETCH_POSTS_SUCCESS:
-            return {...state, loading: false, posts: action.payload}
+            return {...state, loading: false, posts: action.payload.data}
         case PostActionTypes.FETCH_POSTS_ERROR:
             return {...state, loading: false, error: action.payload}
         case PostActionTypes.SET_POST_PAGE:
             return {...state, page: action.payload}
+        case PostActionTypes.SET_TOTAL_COUNT:
+            return {...state,totalCount:action.payload}
+        case PostActionTypes.SET_TOTAL_PAGE:
+            return {...state,totalPage:action.payload}
         default:
             return state
     }
