@@ -11,11 +11,9 @@ interface PostItemProps {
 }
 
 const PostItem: FC<PostItemProps> = (post) => {
-    let user;
     useEffect(()=>{
 
     },[])
-    console.log(user)
     return (
         <Card bg='dark' text={"white"}>
             <Card.Body>
