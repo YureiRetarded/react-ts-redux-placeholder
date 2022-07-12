@@ -19,7 +19,7 @@ const PostItem: FC<PostItemProps> = (post) => {
     return (
         <Card bg='dark' text={"white"}>
             <Card.Body>
-                <Card.Title>{post.post.title}</Card.Title>
+                <Card.Title>{post.post.id} {post.post.title}</Card.Title>
                 <Card.Text>{post.post.body}</Card.Text>
                 {/*{user.name}*/}
             </Card.Body>
