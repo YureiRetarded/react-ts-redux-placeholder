@@ -10,17 +10,8 @@ type UserItemPageParams = {
 const User: FC = () => {
     const params = useParams<UserItemPageParams>()
     const {users,loading,error}=useTypedSelector(state => state.user)
-    const {fetchUser}=useActions()
     useEffect(()=>{
 
-        switch (typeof params.id){
-            case 'string':
-                fetchUser(parseInt(params.id))
-                break
-            default:
-                fetchUser(-1)
-                break
-        }
     },[])
     if (loading){
         return (

@@ -4,20 +4,24 @@ import {Card} from "react-bootstrap";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import post from "../pages/Post";
+import {IUser} from "../types/user";
 
 interface PostItemProps {
     post: IPost
 }
 
 const PostItem: FC<PostItemProps> = (post) => {
-    //console.log(post.post.id)
-    //console.log(users[0])
+    let user;
+    useEffect(()=>{
+
+    },[])
+    console.log(user)
     return (
         <Card bg='dark' text={"white"}>
             <Card.Body>
                 <Card.Title>{post.post.title}</Card.Title>
                 <Card.Text>{post.post.body}</Card.Text>
-                {post.post.userId}
+                {/*{user.name}*/}
             </Card.Body>
         </Card>
 
