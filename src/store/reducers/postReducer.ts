@@ -25,6 +25,9 @@ export const postReducer = (state = initialState, action: PostAction): PostState
             return {...state,totalCount:action.payload}
         case PostActionTypes.SET_TOTAL_PAGE:
             return {...state,totalPage:action.payload}
+        case PostActionTypes.CLEAR_POSTS:
+            console.log('reduser')
+            return {...state,posts:[],page:0,totalPage:0,totalCount:0}
         default:
             return state
     }

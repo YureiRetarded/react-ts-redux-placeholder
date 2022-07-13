@@ -13,8 +13,8 @@ export interface PostState {
     error: null | string;
     page: number;
     limit: number;
-    totalCount: number|string;
-    totalPage: number|string;
+    totalCount: number | string;
+    totalPage: number | string;
 }
 
 export enum PostActionTypes {
@@ -23,7 +23,8 @@ export enum PostActionTypes {
     FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR',
     SET_POST_PAGE = 'SET_POST_PAGE',
     SET_TOTAL_PAGE = 'SET_TOTAL_PAGE',
-    SET_TOTAL_COUNT = 'SET_TOTAL_COUNT'
+    SET_TOTAL_COUNT = 'SET_TOTAL_COUNT',
+    CLEAR_POSTS = 'CLEAR_POSTS'
 
 }
 
@@ -48,12 +49,17 @@ interface SetPostPage {
 
 interface SetTotalPage {
     type: PostActionTypes.SET_TOTAL_PAGE
-    payload: number|string
+    payload: number | string
 }
 
 interface SetTotalCount {
     type: PostActionTypes.SET_TOTAL_COUNT
-    payload: number|string
+    payload: number | string
+}
+
+interface ClearPosts {
+    type: PostActionTypes.CLEAR_POSTS
+    payload: IPost[]
 }
 
 export type PostAction =
@@ -63,3 +69,4 @@ export type PostAction =
     | SetPostPage
     | SetTotalPage
     | SetTotalCount
+    | ClearPosts
