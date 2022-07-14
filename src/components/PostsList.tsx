@@ -2,7 +2,7 @@ import React, {FC, useEffect, useRef} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import PostItem from "./PostItem";
-import {Stack} from "react-bootstrap";
+import {Spinner, Stack} from "react-bootstrap";
 import cl from './PostList.module.scss'
 
 
@@ -30,12 +30,17 @@ const PostsList: FC = () => {
 
     }, [loading])
     return (
-        <Stack gap={5}>
+        <Stack gap={3} className={cl.stack}>
+
 
             {posts.map(post =>
                 <PostItem key={post.id} post={post}/>
             )}
-            {!loading ? <div className={cl.observer} ref={targetRef}/> : <div>Загрзка...</div>}
+
+            {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
+                <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
+            }
+            {totalPage == page ? <div className={cl.FooterPosts}>Posts ended</div> : null}
         </Stack>
     );
 };

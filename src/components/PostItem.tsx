@@ -30,7 +30,7 @@ const PostItem: FC<PostItemProps> = (post) => {
     },[])
 
     return (
-        <Card bg='dark' text={"white"}>
+        <Card bg='white' text={"dark"}>
             <Card.Body>
                 <Card.Title>№{post.post.id} {post.post.title}</Card.Title>
                 <Card.Text>
