@@ -10,9 +10,18 @@ const NavbarReact: FC = () => {
                 <Navbar.Toggle aria-controls='basic-navbar-nav'/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className='me-auto'>
-                        <Nav.Link><Link className={cl.navbar_btn} to="/">Home</Link></Nav.Link>
-                        <Nav.Link><Link className={cl.navbar_btn} to="/posts">Posts</Link></Nav.Link>
-                        <Nav.Link><Link className={cl.navbar_btn} to="/users">Users</Link></Nav.Link>
+                        {/*<Nav.Link><Link className={cl.navbar_btn} to="/">Home</Link></Nav.Link>*/}
+                        {/*<Nav.Link><Link className={cl.navbar_btn} to="/posts">Posts</Link></Nav.Link>*/}
+                        {/*<Nav.Link><Link className={cl.navbar_btn} to="/users">Users</Link></Nav.Link>*/}
+
+
+                        {/*<Nav.Link className={cl.navbar_btn} to="/">Home</Nav.Link>*/}
+                        {/*<Nav.Link className={cl.navbar_btn} to="/posts">Posts</Nav.Link>*/}
+                        {/*<Nav.Link className={cl.navbar_btn} to="/users">Users</Nav.Link>*/}
+
+                        {/*<Link className={cl.navbar_btn} to="/">Home</Link>*/}
+                        {/*<Link className={cl.navbar_btn} to="/posts">Posts</Link>*/}
+                        {/*<Link className={cl.navbar_btn} to="/users">Users</Link>*/}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

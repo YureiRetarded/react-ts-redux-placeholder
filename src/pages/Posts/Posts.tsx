@@ -5,9 +5,7 @@ import {useActions} from "../../hooks/useActions";
 
 
 const Posts: FC = () => {
-    console.log('Страна постов вызвана')
     const {clearAllPosts} = useActions()
-    console.log('Посты удалены')
     clearAllPosts()
 
     return (

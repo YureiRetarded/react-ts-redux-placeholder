@@ -5,10 +5,6 @@ import PostItem from "./PostItem";
 import {Stack} from "react-bootstrap";
 
 
-
-
-
-
 const PostsList: FC = () => {
 
     const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.post)
@@ -16,7 +12,7 @@ const PostsList: FC = () => {
     const observer = useRef<IntersectionObserver>();
     const targetRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
-        fetchPosts(limit, page+1)
+        fetchPosts(limit, page + 1)
     }, [page])
 
 
@@ -38,7 +34,7 @@ const PostsList: FC = () => {
             {posts.map(post =>
                 <PostItem key={post.id} post={post}/>
             )}
-            {!loading?<div ref={targetRef}/>:<div></div>}
+            {!loading ? <div ref={targetRef}/> : <div></div>}
         </Stack>
     );
 };
