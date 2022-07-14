@@ -15,16 +15,3 @@ export const fetchUsers = () => {
         }
     }
 }
-export const fetchUser = (id: number) => {
-    return async (dispatch: Dispatch<UserAction>) => {
-        try {
-            dispatch({type: UserActionTypes.FETCH_USERS})
-            {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/users/' + id)
-                dispatch({type: UserActionTypes.FETCH_USERS_SUCCESS, payload: [response.data]})
-            }
-        } catch (e) {
-            dispatch({type: UserActionTypes.FETCH_USERS_ERROR, payload: 'Ошибка при получение пользователей!'})
-        }
-    }
-}

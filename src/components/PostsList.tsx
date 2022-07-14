@@ -1,19 +1,45 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC, useEffect, useRef} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
+import PostItem from "./PostItem";
+import {Spinner, Stack} from "react-bootstrap";
+import cl from './PostList.module.scss'
+
 
 const PostsList: FC = () => {
-    const {posts, loading, error} = useTypedSelector(state => state.post)
-    const {fetchPosts}=useActions()
-    useEffect(()=>{
-        fetchPosts()
-    },[])
+
+    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.post)
+    const {fetchPosts, setPostPage} = useActions()
+    const observer = useRef<IntersectionObserver>();
+    const targetRef = useRef<HTMLDivElement>(null)
+    useEffect(() => {
+        fetchPosts(limit, page + 1)
+    }, [page])
+
+
+    useEffect(() => {
+        if (loading) return
+        if (observer.current) observer.current?.disconnect()
+        let callback = function (entries: any, observer: any) {
+            if (entries[0].isIntersecting && page < totalPage) {
+                setPostPage(page + 1)
+            }
+        };
+        observer.current = new IntersectionObserver(callback);
+        observer.current?.observe(targetRef.current as Element)
+
+    }, [loading])
     return (
-        <div>
-            {posts.map(post=>
-                <div>{post.title}</div>
+        <Stack gap={3}  className='col-md-7 mx-auto pt-3'>
+            {posts.map(post =>
+                <PostItem key={post.id} post={post}/>
             )}
-        </div>
+
+            {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
+                <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
+            }
+            {totalPage == page ? <div className={cl.FooterPosts}>Posts ended</div> : null}
+        </Stack>
     );
 };
 
