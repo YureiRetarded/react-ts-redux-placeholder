@@ -27,7 +27,6 @@ export const fetchPosts = (limit: number, page: number) => {
     }
 }
 export function clearAllPosts():PostAction{
-    console.log('action')
     return {type: PostActionTypes.CLEAR_POSTS, payload: []}
 }
 

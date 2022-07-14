@@ -8,7 +8,7 @@ const initialState: PostState = {
     limit: 10,
     loading: false,
     totalCount:0,
-    totalPage:0
+    totalPage:1
 }
 
 export const postReducer = (state = initialState, action: PostAction): PostState => {
@@ -26,7 +26,6 @@ export const postReducer = (state = initialState, action: PostAction): PostState
         case PostActionTypes.SET_TOTAL_PAGE:
             return {...state,totalPage:action.payload}
         case PostActionTypes.CLEAR_POSTS:
-            console.log('reduser')
             return {...state,posts:[],page:0,totalPage:0,totalCount:0}
         default:
             return state
