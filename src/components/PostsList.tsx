@@ -3,6 +3,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import PostItem from "./PostItem";
 import {Stack} from "react-bootstrap";
+import cl from './PostList.module.scss'
 
 
 const PostsList: FC = () => {
@@ -34,7 +35,7 @@ const PostsList: FC = () => {
             {posts.map(post =>
                 <PostItem key={post.id} post={post}/>
             )}
-            {!loading ? <div ref={targetRef}/> : <div></div>}
+            {!loading ? <div className={cl.observer} ref={targetRef}/> : <div>Загрзка...</div>}
         </Stack>
     );
 };
