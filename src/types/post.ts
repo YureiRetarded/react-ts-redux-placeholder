@@ -1,5 +1,6 @@
 import {AxiosResponse} from "axios";
 
+
 export interface IPost {
     id: number;
     userId: number;
@@ -7,6 +8,7 @@ export interface IPost {
     body: string;
 }
 
+//Posts
 export interface PostsState {
     posts: IPost[];
     loading: boolean;
@@ -17,6 +19,7 @@ export interface PostsState {
     totalPage: number | string;
 }
 
+
 export enum PostsActionTypes {
     FETCH_POSTS = 'FETCH_POSTS',
     FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS',
@@ -25,8 +28,6 @@ export enum PostsActionTypes {
     SET_TOTAL_PAGE = 'SET_TOTAL_PAGE',
     SET_TOTAL_COUNT = 'SET_TOTAL_COUNT',
     CLEAR_POSTS = 'CLEAR_POSTS',
-    FETCH_POSTS_ID_SUCCESS='FETCH_POSTS_ID_SUCCESS'
-
 }
 
 interface FetchPostsAction {
@@ -71,3 +72,45 @@ export type PostsAction =
     | SetTotalPage
     | SetTotalCount
     | ClearPosts
+
+
+//Post
+
+export interface PostState {
+    post: IPost;
+    loading: boolean;
+    error: null | string;
+}
+
+export enum PostActionTypes {
+    FETCH_POST = 'FETCH_POST',
+    FETCH_POST_SUCCESS = 'FETCH_POST_SUCCESS',
+    FETCH_POST_ERROR = 'FETCH_POST_ERROR',
+    CLEAR_POST = 'CLEAR_POST',
+}
+
+interface FetchPostAction {
+    type: PostActionTypes.FETCH_POST
+}
+
+interface FetchPostSuccessAction {
+    type: PostActionTypes.FETCH_POST_SUCCESS
+    payload: AxiosResponse;
+}
+
+interface FetchPostErrorAction {
+    type: PostActionTypes.FETCH_POST_ERROR
+    payload: string
+}
+
+interface ClearPost {
+    type: PostActionTypes.CLEAR_POST
+    payload: IPost
+}
+
+export type PostAction =
+    FetchPostAction
+    | FetchPostErrorAction
+    | FetchPostSuccessAction
+    | ClearPost
+

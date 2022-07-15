@@ -1,7 +1,9 @@
 import * as UserActionCreators from './user'
-import * as PostActionCreators from './posts'
+import * as PostsActionCreators from './posts'
+import * as PostActionCreators from './post'
 
 export default {
-    ...PostActionCreators,
-    ...UserActionCreators
+    ...PostsActionCreators,
+    ...UserActionCreators,
+    ...PostActionCreators
 }
