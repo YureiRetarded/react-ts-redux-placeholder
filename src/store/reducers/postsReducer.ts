@@ -1,7 +1,7 @@
-import {PostAction, PostActionTypes, PostState} from "../../types/post";
+import {PostsAction, PostsActionTypes, PostsState} from "../../types/post";
 import {Axios} from "axios";
 
-const initialState: PostState = {
+const initialState: PostsState = {
     posts: [],
     page: 1,
     error: null,
@@ -11,21 +11,21 @@ const initialState: PostState = {
     totalPage: 1
 }
 
-export const postReducer = (state = initialState, action: PostAction): PostState => {
+export const postsReducer = (state = initialState, action: PostsAction): PostsState => {
     switch (action.type) {
-        case PostActionTypes.FETCH_POSTS:
+        case PostsActionTypes.FETCH_POSTS:
             return {...state, loading: true}
-        case PostActionTypes.FETCH_POSTS_SUCCESS:
+        case PostsActionTypes.FETCH_POSTS_SUCCESS:
             return {...state, loading: false, posts: [...state.posts, ...action.payload.data]}
-        case PostActionTypes.FETCH_POSTS_ERROR:
+        case PostsActionTypes.FETCH_POSTS_ERROR:
             return {...state, loading: false, error: action.payload}
-        case PostActionTypes.SET_POST_PAGE:
+        case PostsActionTypes.SET_POST_PAGE:
             return {...state, page: action.payload}
-        case PostActionTypes.SET_TOTAL_COUNT:
+        case PostsActionTypes.SET_TOTAL_COUNT:
             return {...state, totalCount: action.payload}
-        case PostActionTypes.SET_TOTAL_PAGE:
+        case PostsActionTypes.SET_TOTAL_PAGE:
             return {...state, totalPage: action.payload}
-        case PostActionTypes.CLEAR_POSTS:
+        case PostsActionTypes.CLEAR_POSTS:
             return {...state, posts: [], page: 0, totalPage: 0, totalCount: 0}
         default:
             return state

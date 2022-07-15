@@ -8,7 +8,7 @@ import cl from './PostList.module.scss'
 
 const PostsList: FC = () => {
 
-    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.post)
+    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.posts)
     const {fetchPosts, setPostPage} = useActions()
     const observer = useRef<IntersectionObserver>();
     const targetRef = useRef<HTMLDivElement>(null)
