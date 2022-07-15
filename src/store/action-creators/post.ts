@@ -7,9 +7,8 @@ export const fetchPost = (id: number) => {
         try {
             dispatch({type: PostActionTypes.FETCH_POST})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/posts'+id)
-
-                dispatch({type: PostActionTypes.FETCH_POST_SUCCESS, payload: response.data})
+                const response = await axios.get('https://jsonplaceholder.typicode.com/posts/'+id)
+                dispatch({type: PostActionTypes.FETCH_POST_SUCCESS, payload: response})
             }
         } catch (e) {
             dispatch({type: PostActionTypes.FETCH_POST_ERROR, payload: 'Ошибка при получение пользователя'})
