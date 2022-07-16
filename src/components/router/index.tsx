@@ -8,6 +8,7 @@ import Albums from "../../pages/Albums";
 import Photos from "../../pages/Photos";
 import Photo from "../../pages/Photo";
 import Todos from "../../pages/Todos";
+import NotFoundPost from "../../pages/NotFoundPost";
 
 
 export const publicRoutes = [
@@ -20,7 +21,7 @@ export const publicRoutes = [
     {path: '/users/:userId/todo', element: <Todos/>},
     {path: '/posts', element: <Posts/>},
     {path: '/posts/:id', element: <Post/>},
-
+    {path: '/posts/not_found_post',element:<NotFoundPost/>},
     {path: '*', element: <NotFoundPage/>}
 
 ]

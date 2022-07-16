@@ -3,17 +3,18 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import PostItem from "./PostItem";
 import {Spinner, Stack} from "react-bootstrap";
-import cl from './PostList.module.scss'
+import cl from './styles/PostList.module.scss'
 
 
 const PostsList: FC = () => {
 
-    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.post)
+    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.posts)
     const {fetchPosts, setPostPage} = useActions()
     const observer = useRef<IntersectionObserver>();
     const targetRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
-        fetchPosts(limit, page + 1)
+        fetchPosts(limit, page)
+
     }, [page])
 
 
@@ -30,7 +31,7 @@ const PostsList: FC = () => {
 
     }, [loading])
     return (
-        <Stack gap={3}  className='col-md-7 mx-auto pt-3'>
+        <Stack gap={3}  className='col-md-10 mx-auto pt-3'>
             {posts.map(post =>
                 <PostItem key={post.id} post={post}/>
             )}
