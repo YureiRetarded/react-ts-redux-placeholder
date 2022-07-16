@@ -2,11 +2,16 @@ import React, {FC, useEffect} from 'react';
 import PostBlock from "../components/PostBlock";
 import {useNavigate, useParams} from "react-router-dom";
 import {checkPostId} from "../utils/checkPost";
-import {clearPost} from "../store/action-creators/post";
+import PostCommentList from "../components/PostCommentList";
+import {useActions} from "../hooks/useActions";
+
 
 const Post: FC = () => {
-    window.scrollTo(0,0)
+    const {clearAllComments,clearPost}=useActions()
     clearPost()
+    clearAllComments()
+    window.scrollTo(0,0)
+
     const {id} = useParams();
     const navigate = useNavigate()
     useEffect(()=>{
@@ -17,6 +22,7 @@ const Post: FC = () => {
          return (
          <div>
              <PostBlock id={parseInt(id||'1')}/>
+             <PostCommentList id={parseInt(id||'1')}/>
          </div>
      )}
     return(

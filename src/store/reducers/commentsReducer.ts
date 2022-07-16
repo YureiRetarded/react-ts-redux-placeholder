@@ -26,7 +26,7 @@ export const commentsReducer = (state = initialState, action: CommentsAction): C
         case CommentsActionTypes.SET_TOTAL_PAGE:
             return {...state, totalPage: action.payload}
         case CommentsActionTypes.CLEAR_COMMENTS:
-            return {...state, comments: [], page: 0, totalPage: 0, totalCount: 0}
+            return {...state, comments: [], page: 1, totalPage: 1, totalCount: 0}
         default:
             return state
     }

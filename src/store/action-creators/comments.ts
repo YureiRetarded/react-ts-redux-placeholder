@@ -9,8 +9,9 @@ export const fetchComments = (PostId: number, limit: number, page: number) => {
         try {
             dispatch({type: CommentsActionTypes.FETCH_COMMENTS})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/posts/'+PostId+'/comments', {
+                const response = await axios.get('https://jsonplaceholder.typicode.com/comments', {
                     params: {
+                        postId:PostId,
                         _limit: limit,
                         _page: page
                     }

@@ -1,7 +1,6 @@
 import {FC, useEffect} from "react";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
-import {fetchPosts} from "../store/action-creators/posts";
 
 interface PostBlockProps{
     id:number
