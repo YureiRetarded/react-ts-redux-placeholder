@@ -7,7 +7,6 @@ import {useActions} from "../../hooks/useActions";
 const Posts: FC = () => {
     const {clearAllPosts} = useActions()
     clearAllPosts()
-
     return (
         <div className={cl.PostPage}>
             <PostsList/>

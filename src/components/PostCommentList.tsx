@@ -1,9 +1,11 @@
-import React, {FC, useEffect, useRef} from 'react';
+import React, {FC, useEffect, useRef, useState} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import CommentItem from "./CommentItem";
 import cl from "./styles/PostList.module.scss";
-import {Spinner} from "react-bootstrap";
+import {Spinner,Stack} from "react-bootstrap";
+import {IUser} from "../types/user";
+
 
 
 interface PostCommentListProps{
@@ -37,7 +39,7 @@ const PostCommentList:FC<PostCommentListProps> = (post) => {
 
 
     return (
-        <div>
+        <Stack gap={3}  className='mx-auto col-md-10 pt-3'>
             {comments.map(comment=>
                 <CommentItem key={comment.id} comment={comment}/>
             )}
@@ -45,7 +47,7 @@ const PostCommentList:FC<PostCommentListProps> = (post) => {
             {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
                 <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
             }
-        </div>
+        </Stack>
     );
 };
 
