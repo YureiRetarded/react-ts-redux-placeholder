@@ -27,21 +27,6 @@ export const fetchPosts = (limit: number, page: number) => {
     }
 }
 
-// export const fetchPost=(id:number)=>{
-//     return async (dispatch: Dispatch<PostAction>) => {
-//         try {
-//             dispatch({type: PostActionTypes.FETCH_POSTS})
-//             {
-//                 const response = await axios.get('https://jsonplaceholder.typicode.com/posts/'+id)
-//                 dispatch({type: PostActionTypes.FETCH_POSTS_SUCCESS, payload: response})
-//             }
-//         }
-//         catch (e){
-//             dispatch({type: PostActionTypes.FETCH_POSTS_ERROR, payload: 'Ошибка при получение пользователя!'})
-//         }
-//     }
-// }
-
 
 export function clearAllPosts():PostsAction{
     return {type: PostsActionTypes.CLEAR_POSTS, payload: []}

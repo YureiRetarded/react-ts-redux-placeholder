@@ -11,10 +11,8 @@ const PostBlock:FC<PostBlockProps>=({id})=>{
     const{post,loading,error}=useTypedSelector(state=> state.post)
     const{fetchPost}=useActions()
     useEffect(()=> {
-        console.log(id)
         fetchPost(id)
     },[])
-   // console.log(post)
     useEffect(()=>{
     },[loading])
     return(
