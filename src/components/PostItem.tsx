@@ -8,7 +8,7 @@ import {IUser} from "../types/user";
 import FetchingUserService from "../API/UserService";
 import axios from "axios";
 import UserService from "../API/UserService";
-import cl from './PostItem.module.scss'
+import cl from './styles/PostItem.module.scss'
 import {useNavigate} from "react-router-dom";
 
 interface PostItemProps {

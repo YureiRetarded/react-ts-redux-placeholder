@@ -3,7 +3,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import PostItem from "./PostItem";
 import {Spinner, Stack} from "react-bootstrap";
-import cl from './PostList.module.scss'
+import cl from './styles/PostList.module.scss'
 
 
 const PostsList: FC = () => {
