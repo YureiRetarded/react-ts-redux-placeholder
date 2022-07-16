@@ -8,7 +8,7 @@ import {IUser} from "../types/user";
 import FetchingUserService from "../API/UserService";
 import axios from "axios";
 import UserService from "../API/UserService";
-import cl from './PostItem.module.scss'
+import cl from './styles/PostItem.module.scss'
 import {useNavigate} from "react-router-dom";
 
 interface PostItemProps {
@@ -39,14 +39,19 @@ const PostItem: FC<PostItemProps> = (post) => {
 
                 {post.post.title ?
                     <Card.Title
+                        className={cl.card_btn}
                         onClick={() => navigate('/posts/' + post.post.id)}>№{post.post.id} {post.post.title}</Card.Title> :
-                    <Card.Title onClick={() => navigate('/posts/' + post.post.id)}>{post.post.id} PostTitle is
+                    <Card.Title
+                        className={cl.card_btn}
+                        onClick={() => navigate('/posts/' + post.post.id)}>{post.post.id} PostTitle is
                         undefined</Card.Title>
                 }
 
 
                 {post.post.body ?
-                    <Card.Text onClick={() => navigate('/posts/' + post.post.id)}>
+                    <Card.Text
+                        className={cl.card_btn}
+                        onClick={() => navigate('/posts/' + post.post.id)}>
                         {post.post.body}
                     </Card.Text> :
                     <Card.Text>
@@ -55,7 +60,9 @@ const PostItem: FC<PostItemProps> = (post) => {
                 }
 
                 {user?.name ?
-                    <Card.Text onClick={() => navigate('/users/' + post.post.userId)}>
+                    <Card.Text
+                        className={cl.card_btn}
+                        onClick={() => navigate('/users/' + post.post.userId)}>
                         {user?.name}
                     </Card.Text> :
                     <Card.Text>
