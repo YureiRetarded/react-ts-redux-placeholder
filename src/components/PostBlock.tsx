@@ -3,12 +3,15 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import {fetchPosts} from "../store/action-creators/posts";
 
+interface PostBlockProps{
+    id:number
+}
 
-const PostBlock:FC=()=>{
+const PostBlock:FC<PostBlockProps>=({id})=>{
     const{post,loading,error}=useTypedSelector(state=> state.post)
     const{fetchPost}=useActions()
     useEffect(()=> {
-        fetchPost(1)
+        fetchPost(id)
     },[])
    // console.log(post)
     useEffect(()=>{
