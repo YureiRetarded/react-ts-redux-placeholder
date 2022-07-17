@@ -7,25 +7,26 @@ import {useActions} from "../hooks/useActions";
 
 
 const Post: FC = () => {
-    const {clearAllComments,clearPost}=useActions()
+    const {clearAllComments, clearPost} = useActions()
     clearPost()
     clearAllComments()
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
 
     const {id} = useParams();
     const navigate = useNavigate()
-    useEffect(()=>{
-        if(checkInputId(id)=='incorrect')
+    useEffect(() => {
+        if (checkInputId(id) == 'incorrect')
             navigate('/posts/not_found_post')
-    },[])
-     if(checkInputId(id)!='incorrect'){
-         return (
-         <div>
-             <PostBlock id={parseInt(id||'1')}/>
-             <PostCommentList id={parseInt(id||'1')}/>
-         </div>
-     )}
-    return(
+    }, [])
+    if (checkInputId(id) != 'incorrect') {
+        return (
+            <div>
+                <PostBlock id={parseInt(id || '1')}/>
+                <PostCommentList id={parseInt(id || '1')}/>
+            </div>
+        )
+    }
+    return (
         <div>Ошибка при отображение поста</div>
     )
 };

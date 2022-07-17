@@ -6,27 +6,32 @@ import UserBlock from "../components/UserBlock";
 import {checkInputId} from "../utils/checking";
 import PostBlock from "../components/PostBlock";
 import PostCommentList from "../components/PostCommentList";
+import UserContentButton from "../components/UserContentButton";
 import UserContent from "../components/UserContent";
 
 const User: FC = () => {
-    const {clearUser}=useActions()
+    const {clearUser, setDefault, clearAllPosts} = useActions()
+    clearAllPosts()
     clearUser()
-    window.scrollTo(0,0)
+    setDefault()
+    window.scrollTo(0, 0)
     const {id} = useParams();
     const navigate = useNavigate()
-    useEffect(()=>{
-        if(checkInputId(id)=='incorrect')
+    useEffect(() => {
+        if (checkInputId(id) == 'incorrect')
             navigate('/users/not_found_user')
-    },[])
-    if(checkInputId(id)!='incorrect'){
+    }, [])
+    if (checkInputId(id) != 'incorrect') {
         return (
-            <div>
-                <UserBlock userId={parseInt(id||'1')}/>
-                <UserContent userId={parseInt(id||'1')}/>
-            </div>
-        )}
-    return(
-        <div>Ошибка при отображение поста</div>
+            <Container className='col-md-12 mx-auto pt-3'>
+                <UserBlock userId={parseInt(id || '1')}/>
+                <UserContentButton/>
+                <UserContent userId={parseInt(id || '1')}/>
+            </Container>
+        )
+    }
+    return (
+        <div>Ошибка при отображение пользователя</div>
     )
 };
 

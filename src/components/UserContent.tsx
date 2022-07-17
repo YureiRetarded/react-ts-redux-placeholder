@@ -1,27 +1,29 @@
-import React, {FC, useEffect, useState} from 'react';
-import {Button, ButtonGroup, Container} from "react-bootstrap";
-interface UserContentProps{
-    userId:number
-}
-const UserContent:FC<UserContentProps> = ({userId}) => {
-    let pageType=0;
-    useEffect(()=>{
-        const setPageType=(type:number)=>{
-            console.log(type)
-            pageType=type
-        }
-    },[pageType])
+import React, {FC} from 'react';
+import {useTypedSelector} from "../hooks/useTypedSelector";
+import UserInfo from "./UserInfo";
+import UserAlbums from "./UserAlbums";
+import UserPosts from "./UserPosts";
 
-    return (
-        <Container className='mx-auto col-md-10 pt-3'>
-            <ButtonGroup className='col-md-12'>
-                <Button onClick={()=>{console.log(1)}} variant="outline-primary">Posts</Button>
-                <Button onClick={()=>{console.log(1)}} variant="outline-primary">Albums</Button>
-                <Button onClick={()=>{console.log(1)}} variant="outline-primary">Info</Button>
-            </ButtonGroup>
-            {pageType}
-        </Container>
-    );
+interface UserContentProps {
+    userId: number
+}
+
+const UserContent: FC<UserContentProps> = ({userId}) => {
+    const {window} = useTypedSelector(state => state.userWindow)
+
+    if (window === 'info') {
+        return (
+            <UserInfo/>
+        )
+    } else if (window === 'albums') {
+        return (
+            <UserAlbums/>
+        )
+    } else
+        return (
+            <UserPosts userId={userId}/>
+        );
+
 };
 
 export default UserContent;

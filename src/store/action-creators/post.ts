@@ -7,7 +7,7 @@ export const fetchPost = (id: number) => {
         try {
             dispatch({type: PostActionTypes.FETCH_POST})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/posts/'+id)
+                const response = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
                 dispatch({type: PostActionTypes.FETCH_POST_SUCCESS, payload: response})
             }
         } catch (e) {
@@ -17,12 +17,14 @@ export const fetchPost = (id: number) => {
 }
 
 
-export function clearPost():PostAction{
-    return {type: PostActionTypes.CLEAR_POST, payload: {
+export function clearPost(): PostAction {
+    return {
+        type: PostActionTypes.CLEAR_POST, payload: {
             id: 0,
             userId: 0,
             title: '',
             body: '',
-        }}
+        }
+    }
 }
 

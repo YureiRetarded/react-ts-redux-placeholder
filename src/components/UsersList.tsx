@@ -28,7 +28,7 @@ const UsersList: FC = () => {
     }, [loading])
 
     return (
-        <Stack gap={3}  className='col-md-10 mx-auto pt-3'>
+        <Stack gap={3}  className='col-md-12 mx-auto pt-3'>
             {users.map(user =>
                 <UserItem key={user.id} user={user}/>
             )}

@@ -2,7 +2,7 @@ import {PostAction, PostActionTypes, PostState} from "../../types/post";
 import {Axios} from "axios";
 
 const initialState: PostState = {
-    post:{
+    post: {
         id: 0,
         userId: 0,
         title: '',

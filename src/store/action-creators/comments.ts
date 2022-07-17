@@ -11,7 +11,7 @@ export const fetchComments = (PostId: number, limit: number, page: number) => {
             {
                 const response = await axios.get('https://jsonplaceholder.typicode.com/comments', {
                     params: {
-                        postId:PostId,
+                        postId: PostId,
                         _limit: limit,
                         _page: page
                     }

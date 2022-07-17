@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import {IPost} from "../types/post";
-import {Card} from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import {IUser} from "../types/user";
 import UserService from "../API/UserService";
 import cl from './styles/PostItem.module.scss'
@@ -67,7 +67,6 @@ const PostItem: FC<PostItemProps> = (post) => {
 
             </Card.Body>
         </Card>
-
     );
 };
 

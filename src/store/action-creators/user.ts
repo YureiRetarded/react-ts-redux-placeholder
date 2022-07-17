@@ -7,7 +7,7 @@ export const fetchUser = (id: number) => {
         try {
             dispatch({type: UserActionTypes.FETCH_USER})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/users/'+id)
+                const response = await axios.get('https://jsonplaceholder.typicode.com/users/' + id)
                 dispatch({type: UserActionTypes.FETCH_USER_SUCCESS, payload: response})
             }
         } catch (e) {
@@ -17,11 +17,13 @@ export const fetchUser = (id: number) => {
 }
 
 
-export function clearUser():UserAction{
-    return {type: UserActionTypes.CLEAR_USER, payload: {
-            id:0,
-            name:'',
-            username:''
-        }}
+export function clearUser(): UserAction {
+    return {
+        type: UserActionTypes.CLEAR_USER, payload: {
+            id: 0,
+            name: '',
+            username: ''
+        }
+    }
 }
 

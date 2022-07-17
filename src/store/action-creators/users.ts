@@ -28,7 +28,7 @@ export const fetchUsers = (limit: number, page: number) => {
 }
 
 
-export function clearAllUsers():UsersAction{
+export function clearAllUsers(): UsersAction {
     return {type: UsersActionTypes.CLEAR_USERS, payload: []}
 }
 

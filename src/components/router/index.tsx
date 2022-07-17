@@ -22,8 +22,8 @@ export const publicRoutes = [
     {path: '/users/:userId/todo', element: <Todos/>},
     {path: '/posts', element: <Posts/>},
     {path: '/posts/:id', element: <Post/>},
-    {path: '/posts/not_found_post',element:<NotFoundPost/>},
-    {path: '/users/not_found_user',element:<NotFoundUser/>},
+    {path: '/posts/not_found_post', element: <NotFoundPost/>},
+    {path: '/users/not_found_user', element: <NotFoundUser/>},
     {path: '*', element: <NotFoundPage/>}
 
 ]
