@@ -36,7 +36,7 @@ const UsersList: FC = () => {
             {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
                 <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
             }
-            {totalPage == page ? <div className={cl.FooterPosts}>Posts ended</div> : null}
+            {totalPage == page ? <div className={cl.FooterPosts}>Users ended</div> : null}
         </Stack>
     );
 

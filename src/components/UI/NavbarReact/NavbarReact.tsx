@@ -7,7 +7,7 @@ import {LinkContainer} from "react-router-bootstrap";
 const NavbarReact: FC = () => {
     return (
         <Navbar bg='white'>
-            <Container>
+            <Container className='mx-auto col-md-7'>
                 <Navbar.Toggle aria-controls='basic-navbar-nav'/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className='me-auto'>
