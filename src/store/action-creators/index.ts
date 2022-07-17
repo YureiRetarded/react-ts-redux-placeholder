@@ -1,4 +1,5 @@
 import * as UserActionCreators from './user'
+import * as UserWindowActionCreators from './userWindow'
 import * as UsersActionCreators from './users'
 import * as PostsActionCreators from './posts'
 import * as PostActionCreators from './post'
@@ -9,5 +10,6 @@ export default {
     ...UserActionCreators,
     ...UsersActionCreators,
     ...PostActionCreators,
-    ...CommentsActionCreators
+    ...CommentsActionCreators,
+    ...UserWindowActionCreators
 }

@@ -6,6 +6,7 @@ import UserBlock from "../components/UserBlock";
 import {checkInputId} from "../utils/checking";
 import PostBlock from "../components/PostBlock";
 import PostCommentList from "../components/PostCommentList";
+import UserContent from "../components/UserContent";
 
 const User: FC = () => {
     const {clearUser}=useActions()
@@ -21,7 +22,7 @@ const User: FC = () => {
         return (
             <div>
                 <UserBlock userId={parseInt(id||'1')}/>
-
+                <UserContent userId={parseInt(id||'1')}/>
             </div>
         )}
     return(
