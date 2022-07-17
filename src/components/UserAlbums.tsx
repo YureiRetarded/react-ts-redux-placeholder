@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
 
-const Todos: FC = () => {
+const UserAlbums: FC = () => {
     return (
         <div>
-            Список дел
+            User Album
         </div>
     );
 };
 
-export default Todos;
+export default UserAlbums;

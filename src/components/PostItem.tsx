@@ -1,12 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {IPost} from "../types/post";
-import {Card} from "react-bootstrap";
-import {useTypedSelector} from "../hooks/useTypedSelector";
-import {useActions} from "../hooks/useActions";
-import post from "../pages/Post";
+import {Card, Container} from "react-bootstrap";
 import {IUser} from "../types/user";
-import FetchingUserService from "../API/UserService";
-import axios from "axios";
 import UserService from "../API/UserService";
 import cl from './styles/PostItem.module.scss'
 import {useNavigate} from "react-router-dom";
@@ -72,7 +67,6 @@ const PostItem: FC<PostItemProps> = (post) => {
 
             </Card.Body>
         </Card>
-
     );
 };
 

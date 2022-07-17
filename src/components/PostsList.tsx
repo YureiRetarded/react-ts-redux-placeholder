@@ -31,7 +31,7 @@ const PostsList: FC = () => {
 
     }, [loading])
     return (
-        <Stack gap={3}  className='col-md-10 mx-auto pt-3'>
+        <Stack gap={3} className='col-md-12 mx-auto pt-3'>
             {posts.map(post =>
                 <PostItem key={post.id} post={post}/>
             )}
