@@ -22,7 +22,7 @@ export const fetchPosts = (limit: number, page: number) => {
                 })
             }
         } catch (e) {
-            dispatch({type: PostsActionTypes.FETCH_POSTS_ERROR, payload: 'Ошибка при получение пользователей!'})
+            dispatch({type: PostsActionTypes.FETCH_POSTS_ERROR, payload: 'Ошибка при получение постов!'})
         }
     }
 }

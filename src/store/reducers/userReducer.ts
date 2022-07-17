@@ -1,6 +1,4 @@
 import {UserAction, UserActionTypes, UserState} from "../../types/user";
-import {PostActionTypes} from "../../types/post";
-
 const initialState: UserState = {
     user: {
         id:0,

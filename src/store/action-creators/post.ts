@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {PostAction, PostActionTypes, PostsActionTypes} from "../../types/post";
+import {PostAction, PostActionTypes} from "../../types/post";
 import axios from "axios";
 
 export const fetchPost = (id: number) => {
@@ -11,7 +11,7 @@ export const fetchPost = (id: number) => {
                 dispatch({type: PostActionTypes.FETCH_POST_SUCCESS, payload: response})
             }
         } catch (e) {
-            dispatch({type: PostActionTypes.FETCH_POST_ERROR, payload: 'Ошибка при получение пользователя'})
+            dispatch({type: PostActionTypes.FETCH_POST_ERROR, payload: 'Ошибка при получение поста'})
         }
     }
 }

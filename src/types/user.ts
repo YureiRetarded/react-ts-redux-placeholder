@@ -1,5 +1,4 @@
 import {AxiosResponse} from "axios";
-import {IPost} from "./post";
 
 
 export interface IUser {
@@ -129,7 +128,7 @@ interface FetchUserErrorAction {
 
 interface ClearUser {
     type: UserActionTypes.CLEAR_USER
-    payload: IPost
+    payload: IUser
 }
 
 export type UserAction =

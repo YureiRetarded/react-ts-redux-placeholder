@@ -2,16 +2,26 @@ import {Dispatch} from "redux";
 import {UserAction, UserActionTypes} from "../../types/user";
 import axios from "axios";
 
-export const fetchUsers = () => {
+export const fetchUser = (id: number) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
-            dispatch({type: UserActionTypes.FETCH_USERS})
+            dispatch({type: UserActionTypes.FETCH_USER})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-                dispatch({type: UserActionTypes.FETCH_USERS_SUCCESS, payload: response.data})
+                const response = await axios.get('https://jsonplaceholder.typicode.com/users/'+id)
+                dispatch({type: UserActionTypes.FETCH_USER_SUCCESS, payload: response})
             }
         } catch (e) {
-            dispatch({type: UserActionTypes.FETCH_USERS_ERROR, payload: 'Ошибка при получение пользователей!'})
+            dispatch({type: UserActionTypes.FETCH_USER_ERROR, payload: 'Ошибка при получение пользователя'})
         }
     }
 }
+
+
+export function clearPost():UserAction{
+    return {type: UserActionTypes.CLEAR_USER, payload: {
+            id:0,
+            name:'',
+            username:''
+        }}
+}
+
