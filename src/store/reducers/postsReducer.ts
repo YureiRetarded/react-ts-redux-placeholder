@@ -1,5 +1,5 @@
 import {PostsAction, PostsActionTypes, PostsState} from "../../types/post";
-import {Axios} from "axios";
+
 
 const initialState: PostsState = {
     posts: [],
