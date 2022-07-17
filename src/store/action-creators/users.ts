@@ -28,10 +28,10 @@ export const fetchUsers = (limit: number, page: number) => {
 }
 
 
-export function clearAllPosts():UsersAction{
+export function clearAllUsers():UsersAction{
     return {type: UsersActionTypes.CLEAR_USERS, payload: []}
 }
 
-export function setPostPage(page: number): UsersAction {
+export function setUserPage(page: number): UsersAction {
     return {type: UsersActionTypes.SET_USER_PAGE, payload: page}
 }

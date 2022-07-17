@@ -17,7 +17,7 @@ export const fetchUser = (id: number) => {
 }
 
 
-export function clearPost():UserAction{
+export function clearUser():UserAction{
     return {type: UserActionTypes.CLEAR_USER, payload: {
             id:0,
             name:'',

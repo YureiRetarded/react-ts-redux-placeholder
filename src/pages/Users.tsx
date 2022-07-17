@@ -1,18 +1,15 @@
-import React, {FC, useEffect} from 'react';
-import {useTypedSelector} from "../hooks/useTypedSelector";
+import React, {FC} from 'react';
 import {useActions} from "../hooks/useActions";
+import {clearAllUsers} from "../store/action-creators/users";
+
+import UsersList from "../components/UsersList";
 
 const Users: FC = () => {
-    const {users, error, loading} = useTypedSelector(state => state.user)
-    const {fetchUsers} = useActions();
-    useEffect(() => {
-        fetchUsers()
-    }, [])
+    const {clearAllUsers} = useActions();
+    clearAllUsers()
     return (
         <div>
-            {users.map(user =>
-                <div key={user.id}>{user.name}</div>
-            )}
+            <UsersList/>
         </div>
     );
 };

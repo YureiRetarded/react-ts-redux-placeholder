@@ -1,4 +1,4 @@
-export function checkPostId(id:any){
+export function checkInputId(id:any){
     switch (typeof id) {
         case 'number':
             return id
