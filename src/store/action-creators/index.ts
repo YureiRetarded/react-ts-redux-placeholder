@@ -4,6 +4,10 @@ import * as UsersActionCreators from './users'
 import * as PostsActionCreators from './posts'
 import * as PostActionCreators from './post'
 import * as CommentsActionCreators from './comments'
+import * as AlbumActionCreators from './album'
+import * as AlbumsActionCreators from './albums'
+import * as PhotoActionCreators from './photo'
+import * as PhotosActionCreators from './photos'
 
 export default {
     ...PostsActionCreators,
@@ -11,5 +15,9 @@ export default {
     ...UsersActionCreators,
     ...PostActionCreators,
     ...CommentsActionCreators,
-    ...UserWindowActionCreators
+    ...UserWindowActionCreators,
+    ...AlbumActionCreators,
+    ...AlbumsActionCreators,
+    ...PhotoActionCreators,
+    ...PhotosActionCreators,
 }

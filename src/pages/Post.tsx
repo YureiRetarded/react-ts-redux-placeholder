@@ -4,6 +4,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {checkInputId} from "../utils/checking";
 import PostCommentList from "../components/PostCommentList";
 import {useActions} from "../hooks/useActions";
+import {Container} from "react-bootstrap";
 
 
 const Post: FC = () => {

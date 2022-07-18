@@ -17,7 +17,7 @@ const UserContent: FC<UserContentProps> = ({userId}) => {
         )
     } else if (window === 'albums') {
         return (
-            <UserAlbums/>
+            <UserAlbums userId={userId}/>
         )
     } else
         return (

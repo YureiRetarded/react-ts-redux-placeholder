@@ -3,6 +3,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import cl from "./styles/PostItem.module.scss";
 import {Container} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
 interface UserBlockProps {
     userId: number

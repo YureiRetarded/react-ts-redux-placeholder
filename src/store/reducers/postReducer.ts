@@ -1,5 +1,4 @@
 import {PostAction, PostActionTypes, PostState} from "../../types/post";
-import {Axios} from "axios";
 
 const initialState: PostState = {
     post: {

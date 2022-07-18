@@ -10,11 +10,12 @@ import UserContentButton from "../components/UserContentButton";
 import UserContent from "../components/UserContent";
 
 const User: FC = () => {
-    const {clearUser, setDefault, clearAllPosts} = useActions()
+    const {clearUser, setDefault, clearAllPosts,clearAllAlbums} = useActions()
     clearAllPosts()
     clearUser()
     setDefault()
-    window.scrollTo(0, 0)
+    clearAllAlbums()
+
     const {id} = useParams();
     const navigate = useNavigate()
     useEffect(() => {
