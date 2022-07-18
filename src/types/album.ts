@@ -1,5 +1,4 @@
 import {AxiosResponse} from "axios";
-import {IPost, PostsActionTypes} from "./post";
 
 export interface IAlbum {
     id: number;
@@ -7,8 +6,8 @@ export interface IAlbum {
     title: string;
 }
 
-export  interface AlbumsState{
-    albums:IAlbum[]
+export interface AlbumsState {
+    albums: IAlbum[]
     loading: boolean;
     error: null | string;
     page: number;
