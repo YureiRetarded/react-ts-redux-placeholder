@@ -8,7 +8,7 @@ export const fetchPhotosByAlbum = (limit: number, page: number, albumId: number)
         try {
             dispatch({type: PhotosActionTypes.FETCH_PHOTOS})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/albums', {
+                const response = await axios.get('https://jsonplaceholder.typicode.com/photos', {
                     params: {
                         albumId: albumId,
                         _limit: limit,

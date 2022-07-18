@@ -15,7 +15,7 @@ const User: FC = () => {
     clearUser()
     setDefault()
     clearAllAlbums()
-    window.scrollTo(0, 0)
+
     const {id} = useParams();
     const navigate = useNavigate()
     useEffect(() => {

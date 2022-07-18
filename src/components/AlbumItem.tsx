@@ -1,25 +1,29 @@
-import React, {FC, useState} from 'react';
-
+import React, {FC, useEffect, useRef, useState} from 'react';
 import {IAlbum} from "../types/album";
 import {IUser} from "../types/user";
 import {useNavigate} from "react-router-dom";
-import {Card,Accordion} from "react-bootstrap";
+import {Card, Accordion, Spinner} from "react-bootstrap";
+import {useTypedSelector} from "../hooks/useTypedSelector";
+import {useActions} from "../hooks/useActions";
+import PhotoItem from "./PhotoItem";
+import cl from "./styles/PostItem.module.scss";
+
 interface AlbumItemProps {
     album: IAlbum
 }
 
-const AlbumItem:FC<AlbumItemProps> = (album) => {
+const AlbumItem: FC<AlbumItemProps> = (album) => {
 
-    const [user, setUser] = useState<IUser>()
     const navigate = useNavigate()
-
     return (
-        <Accordion.Item eventKey={album.album?.id.toString()}>
-            <Accordion.Header>{album.album?.title}</Accordion.Header>
-            <Accordion.Body>
-
-            </Accordion.Body>
-        </Accordion.Item>
+        <Card>
+            <Card.Body>
+                <Card.Title className={cl.card_btn}
+                            onClick={() => navigate('/users/' + album.album.userId + '/album/' + album.album.id)}>
+                    {album.album.title}
+                </Card.Title>
+            </Card.Body>
+        </Card>
     );
 };
 
