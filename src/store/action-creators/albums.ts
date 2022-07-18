@@ -32,6 +32,6 @@ export function clearAllAlbums(): AlbumsAction {
     return {type: AlbumsActionTypes.CLEAR_ALBUMS, payload: []}
 }
 
-export function setPostPage(page: number): AlbumsAction {
+export function setAlbumsPage(page: number): AlbumsAction {
     return {type: AlbumsActionTypes.SET_ALBUM_PAGE, payload: page}
 }

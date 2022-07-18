@@ -32,6 +32,6 @@ export function clearAllPhotos(): PhotosAction {
     return {type: PhotosActionTypes.CLEAR_PHOTOS, payload: []}
 }
 
-export function setPostPage(page: number): PhotosAction {
+export function setPhotosPage(page: number): PhotosAction {
     return {type: PhotosActionTypes.SET_PHOTO_PAGE, payload: page}
 }

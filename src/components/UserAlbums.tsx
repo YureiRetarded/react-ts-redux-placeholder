@@ -1,10 +1,13 @@
 import React, {FC} from 'react';
+import AlbumsList from "./AlbumsList";
 
-const UserAlbums: FC = () => {
+interface UserPostsProps {
+    userId: number
+}
+
+const UserAlbums: FC<UserPostsProps> = ({userId}) => {
     return (
-        <div>
-            User Album
-        </div>
+        <AlbumsList userId={userId}/>
     );
 };
 

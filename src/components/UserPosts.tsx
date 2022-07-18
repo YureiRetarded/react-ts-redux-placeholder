@@ -10,9 +10,8 @@ interface UserPostsProps {
 }
 
 const UserPosts: FC<UserPostsProps> = ({userId}) => {
-
-    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.posts)
     const {fetchPostsByUser, setPostPage} = useActions()
+    const {posts, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.posts)
     const observer = useRef<IntersectionObserver>();
     const targetRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
