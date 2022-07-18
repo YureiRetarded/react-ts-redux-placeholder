@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useRef} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
-import {Spinner, Stack} from "react-bootstrap";
+import {Container, Spinner, Stack} from "react-bootstrap";
 import cl from "./styles/PostList.module.scss";
 import UserItem from "./UserItem";
 
@@ -28,16 +28,19 @@ const UsersList: FC = () => {
     }, [loading])
 
     return (
-        <Stack gap={3}  className='col-md-12 mx-auto pt-3'>
-            {users.map(user =>
-                <UserItem key={user.id} user={user}/>
-            )}
+        <Container className='p-0'>
+            <Stack gap={3}  className='col-md-12 mx-auto pt-3'>
+                {users.map(user =>
+                    <UserItem key={user.id} user={user}/>
+                )}
 
-            {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
-                <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
-            }
-            {totalPage == page ? <div className={cl.FooterPosts}>Users ended</div> : null}
-        </Stack>
+                {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
+                    <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
+                }
+                {totalPage == page ? <div className={cl.FooterPosts}>Users ended</div> : null}
+            </Stack>
+        </Container>
+
     );
 
 };

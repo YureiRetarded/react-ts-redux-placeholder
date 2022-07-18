@@ -3,7 +3,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import CommentItem from "./CommentItem";
 import cl from "./styles/PostList.module.scss";
-import {Spinner, Stack} from "react-bootstrap";
+import {Container, Spinner, Stack} from "react-bootstrap";
 import {IUser} from "../types/user";
 
 
@@ -38,15 +38,17 @@ const PostCommentList: FC<PostCommentListProps> = (post) => {
 
 
     return (
-        <Stack gap={3} className='mx-auto col-md-12 pt-3'>
-            {comments.map(comment =>
-                <CommentItem key={comment.id} comment={comment}/>
-            )}
+        <Container className='p-0'>
+            <Stack gap={3} className='mx-auto col-md-12 pt-3'>
+                {comments.map(comment =>
+                    <CommentItem key={comment.id} comment={comment}/>
+                )}
 
-            {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
-                <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
-            }
-        </Stack>
+                {!loading || page == totalPage ? <div className={cl.observer} ref={targetRef}/> :
+                    <div className={cl.FooterPostsCircle}><Spinner animation='border'/></div>
+                }
+            </Stack>
+        </Container>
     );
 };
 
