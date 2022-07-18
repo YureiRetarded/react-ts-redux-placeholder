@@ -11,7 +11,7 @@ export const fetchUser = (id: number) => {
                 dispatch({type: UserActionTypes.FETCH_USER_SUCCESS, payload: response})
             }
         } catch (e) {
-            dispatch({type: UserActionTypes.FETCH_USER_ERROR, payload: 'Ошибка при получение пользователя'})
+            dispatch({type: UserActionTypes.FETCH_USER_ERROR, payload: '404'})
         }
     }
 }

@@ -9,15 +9,22 @@ const UserContentButton: FC = () => {
     return (
         <ButtonGroup className='col-md-12 pt-3 pb-3'>
             <Button onClick={() => {
-                clearAllPosts()
-                setWindow('posts')
+                if (window !== 'posts') {
+                    clearAllPosts()
+                    setWindow('posts')
+                }
             }} variant="outline-primary">Posts</Button>
             <Button onClick={() => {
-                clearAllAlbums()
-                setWindow('albums')
+                if (window !== 'albums') {
+                    clearAllAlbums()
+                    setWindow('albums')
+                }
             }} variant="outline-primary">Albums</Button>
             <Button onClick={() => {
-                setWindow('info')
+                if (window !== 'info') {
+                    setWindow('info')
+                }
+
             }} variant="outline-primary">Info</Button>
         </ButtonGroup>
     );

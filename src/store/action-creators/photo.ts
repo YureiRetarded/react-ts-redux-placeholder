@@ -1,17 +1,44 @@
 import {Dispatch} from "redux";
-import {PhotoAction, PhotoActionTypes} from "../../types/photo";
+import {PhotoAction, PhotoActionTypes, PhotosActionTypes} from "../../types/photo";
 import axios from "axios";
 
-export const fetchPhoto = (id: number,) => {
+export const fetchPhoto = (userId:number,albumId:number,photoId:number) => {
     return async (dispatch: Dispatch<PhotoAction>) => {
         try {
             dispatch({type: PhotoActionTypes.FETCH_PHOTO})
             {
-                const response = await axios.get('https://jsonplaceholder.typicode.com/photos/' + id)
-                dispatch({type: PhotoActionTypes.FETCH_PHOTO_SUCCESS, payload: response})
+                const responseAlbum = await axios.get('https://jsonplaceholder.typicode.com/albums', {
+                    params: {
+                        userId: userId,
+                        id:albumId
+                    }
+                })
+                const responsePhoto = await axios.get('https://jsonplaceholder.typicode.com/photos', {
+                    params: {
+                        albumId: albumId,
+                        id:photoId
+                    }
+                })
+
+                if(responseAlbum.data.length===0||responsePhoto.data.length===0){
+                    if(responseAlbum.data.length===0){
+                        dispatch({type: PhotoActionTypes.FETCH_PHOTO_ERROR, payload: '405'})
+                    }
+                    if(responsePhoto.data.length===0){
+                        dispatch({type: PhotoActionTypes.FETCH_PHOTO_ERROR, payload: '404'})
+                    }
+                    throw false
+                }
+
+                //const response = await axios.get('https://jsonplaceholder.typicode.com/photos/' + photoId)
+
+
+
+
+                dispatch({type: PhotoActionTypes.FETCH_PHOTO_SUCCESS, payload: responsePhoto})
             }
         } catch (e) {
-            dispatch({type: PhotoActionTypes.FETCH_PHOTO_ERROR, payload: 'Ошибка при получение поста'})
+            dispatch({type: PhotoActionTypes.FETCH_PHOTO_ERROR, payload: '404'})
         }
     }
 }

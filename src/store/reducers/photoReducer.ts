@@ -17,11 +17,11 @@ export const photoReducer = (state = initialState, action: PhotoAction): PhotoSt
         case PhotoActionTypes.FETCH_PHOTO:
             return {...state, loading: true}
         case PhotoActionTypes.FETCH_PHOTO_SUCCESS:
-            return {...state, loading: false, photo: action.payload.data}
+            return {...state, loading: false, photo: action.payload.data[0]}
         case PhotoActionTypes.FETCH_PHOTO_ERROR:
             return {...state, loading: false, error: action.payload}
         case PhotoActionTypes.CLEAR_PHOTO:
-            return {...state, photo: initialState.photo}
+            return {...state, photo: initialState.photo,error:null}
         default:
             return state
     }

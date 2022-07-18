@@ -11,7 +11,7 @@ export const fetchPost = (id: number) => {
                 dispatch({type: PostActionTypes.FETCH_POST_SUCCESS, payload: response})
             }
         } catch (e) {
-            dispatch({type: PostActionTypes.FETCH_POST_ERROR, payload: 'Ошибка при получение поста'})
+            dispatch({type: PostActionTypes.FETCH_POST_ERROR, payload: '404'})
         }
     }
 }

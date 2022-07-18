@@ -6,11 +6,13 @@ import PhotoList from "../components/PhotoList";
 
 const Photos: FC = () => {
     window.scrollTo(0, 0)
-    const {clearAlbum, clearAllPhotos} = useActions()
+    const {clearAlbum, clearAllPhotos,clearPhoto} = useActions()
     clearAlbum()
     clearAllPhotos()
+    clearPhoto()
     const navigate = useNavigate();
     const {userId, albumId} = useParams();
+
     return (
         <div>
             <Container className='p-0 pt-3 pb-3'>

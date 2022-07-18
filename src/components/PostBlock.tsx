@@ -39,6 +39,9 @@ const PostBlock: FC<PostBlockProps> = ({id}) => {
 
     useEffect(() => {
     }, [loading])
+    if(error==='404'){
+        navigate('/posts/not_found_post')
+    }
     return (
         <Container className='mx-auto col-md-12 pt-3'>
             <h2>

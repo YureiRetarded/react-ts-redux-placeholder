@@ -10,11 +10,15 @@ interface UserBlockProps {
 }
 
 const UserBlock: FC<UserBlockProps> = ({userId}) => {
+    const navigate=useNavigate()
     const {user, loading, error} = useTypedSelector(state => state.user)
     const {fetchUser} = useActions();
     useEffect(() => {
         fetchUser(userId)
     }, [])
+    if(error==='404'){
+       navigate('/users/not_found_user')
+    }
     return (
         <div>
             <h2>

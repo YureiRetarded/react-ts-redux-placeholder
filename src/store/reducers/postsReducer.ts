@@ -26,7 +26,7 @@ export const postsReducer = (state = initialState, action: PostsAction): PostsSt
         case PostsActionTypes.SET_TOTAL_PAGE:
             return {...state, totalPage: action.payload}
         case PostsActionTypes.CLEAR_POSTS:
-            return {...state, posts: [], page: 1, totalPage: 1, totalCount: 0}
+            return {...state, posts: [], page: 1, totalPage: 1, totalCount: 0,error:null}
         default:
             return state
     }

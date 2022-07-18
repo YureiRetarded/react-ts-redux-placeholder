@@ -26,7 +26,7 @@ export const photosReducer = (state = initialState, action: PhotosAction): Photo
         case PhotosActionTypes.SET_TOTAL_PAGE:
             return {...state, totalPage: action.payload}
         case PhotosActionTypes.CLEAR_PHOTOS:
-            return {...state, photos: [], page: 1, totalPage: 1, totalCount: 0}
+            return {...state, photos: [], page: 1, totalPage: 1, totalCount: 0,error:null}
         default:
             return state
     }
