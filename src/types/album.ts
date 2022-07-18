@@ -71,7 +71,7 @@ export type AlbumsAction =
 
 
 export interface AlbumState {
-    post: IAlbum;
+    album: IAlbum;
     loading: boolean;
     error: null | string;
 }

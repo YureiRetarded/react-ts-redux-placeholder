@@ -74,7 +74,7 @@ export type PhotosAction =
 
 
 export interface PhotoState {
-    post: IPhoto;
+    photo: IPhoto;
     loading: boolean;
     error: null | string;
 }
