@@ -1,4 +1,4 @@
-import {IUserWindow, UserWindowAction, UserWindowActionTypes, UserWindowState} from "../../types/userWindow";
+import {UserWindowAction, UserWindowActionTypes, UserWindowState} from "../../types/userWindow";
 
 const initialState: UserWindowState = {
     window: 'posts'

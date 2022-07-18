@@ -1,15 +1,15 @@
 import React, {FC, useEffect, useRef} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
-import PostItem from "./PostItem";
 import cl from "./styles/PostList.module.scss";
-import {Accordion, Spinner, Stack} from "react-bootstrap";
+import {Spinner, Stack} from "react-bootstrap";
 import AlbumItem from "./AlbumItem";
 
 interface UserPostsProps {
     userId: number
 }
-const AlbumsList:FC<UserPostsProps> = ({userId}) => {
+
+const AlbumsList: FC<UserPostsProps> = ({userId}) => {
     const {albums, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.albums)
     const {fetchAlbumsByUser, setAlbumsPage} = useActions()
     const observer = useRef<IntersectionObserver>();

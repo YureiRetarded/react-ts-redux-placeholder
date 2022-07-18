@@ -1,11 +1,7 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
+import React, {FC} from 'react';
 import {IAlbum} from "../types/album";
-import {IUser} from "../types/user";
 import {useNavigate} from "react-router-dom";
-import {Card, Accordion, Spinner} from "react-bootstrap";
-import {useTypedSelector} from "../hooks/useTypedSelector";
-import {useActions} from "../hooks/useActions";
-import PhotoItem from "./PhotoItem";
+import {Card} from "react-bootstrap";
 import cl from "./styles/PostItem.module.scss";
 
 interface AlbumItemProps {

@@ -1,5 +1,5 @@
-import React, {FC, useEffect} from 'react';
-import {Button, ButtonGroup, Container} from "react-bootstrap";
+import React, {FC} from 'react';
+import {Button, ButtonGroup} from "react-bootstrap";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 
@@ -7,7 +7,7 @@ const UserContentButton: FC = () => {
     const {window} = useTypedSelector(state => state.userWindow)
     const {setWindow, setDefault, clearAllPosts, clearAllAlbums} = useActions()
     return (
-        <ButtonGroup className='col-md-12 pt-3 pb-3'>
+        <ButtonGroup className='w-100 pt-3 pb-3'>
             <Button onClick={() => {
                 if (window !== 'posts') {
                     clearAllPosts()

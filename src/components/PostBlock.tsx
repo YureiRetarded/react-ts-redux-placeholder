@@ -39,7 +39,7 @@ const PostBlock: FC<PostBlockProps> = ({id}) => {
 
     useEffect(() => {
     }, [loading])
-    if(error==='404'){
+    if (error === '404') {
         navigate('/posts/not_found_post')
     }
     return (

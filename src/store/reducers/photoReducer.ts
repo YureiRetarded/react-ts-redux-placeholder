@@ -2,11 +2,11 @@ import {PhotoAction, PhotoActionTypes, PhotoState} from "../../types/photo";
 
 const initialState: PhotoState = {
     photo: {
-        albumId:0,
+        albumId: 0,
         id: 0,
         title: '',
-        url:'',
-        thumbnailUrl:''
+        url: '',
+        thumbnailUrl: ''
     },
     error: null,
     loading: false,
@@ -21,7 +21,7 @@ export const photoReducer = (state = initialState, action: PhotoAction): PhotoSt
         case PhotoActionTypes.FETCH_PHOTO_ERROR:
             return {...state, loading: false, error: action.payload}
         case PhotoActionTypes.CLEAR_PHOTO:
-            return {...state, photo: initialState.photo,error:null}
+            return {...state, photo: initialState.photo, error: null}
         default:
             return state
     }

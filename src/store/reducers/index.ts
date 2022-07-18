@@ -17,10 +17,10 @@ export const rootReducer = combineReducers({
     post: postReducer,
     comments: commentsReducer,
     userWindow: userWindowReducer,
-    album:albumReducer,
-    albums:albumsReducer,
-    photo:photoReducer,
-    photos:photosReducer
+    album: albumReducer,
+    albums: albumsReducer,
+    photo: photoReducer,
+    photos: photosReducer
 
 })
 export type RootState = ReturnType<typeof rootReducer>

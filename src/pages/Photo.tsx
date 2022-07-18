@@ -8,15 +8,15 @@ const Photo: FC = () => {
     const navigate = useNavigate();
     const {photo, loading, error} = useTypedSelector(state => state.photo)
     const {fetchPhoto} = useActions()
-    const {userId,albumId,photoId} = useParams()
+    const {userId, albumId, photoId} = useParams()
     useEffect(() => {
-        fetchPhoto(parseInt(userId || '0'),parseInt(albumId || '0'),parseInt(photoId || '0'))
+        fetchPhoto(parseInt(userId || '0'), parseInt(albumId || '0'), parseInt(photoId || '0'))
     }, [])
-    if(error==='405'){
-        navigate('/users/'+userId)
+    if (error === '405') {
+        navigate('/users/' + userId)
     }
-    if(error==='404'){
-        navigate('/users/'+userId+'/album/'+albumId)
+    if (error === '404') {
+        navigate('/users/' + userId + '/album/' + albumId)
     }
     return (
         <Container className='p-0 pt-3'>
