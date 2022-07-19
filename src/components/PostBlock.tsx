@@ -40,7 +40,7 @@ const PostBlock: FC<PostBlockProps> = ({id}) => {
     useEffect(() => {
     }, [loading])
     if (error === '404') {
-        navigate('/posts/not_found_post')
+        navigate('/react-ts-redux-placeholder/posts/not_found_post')
     }
     return (
         <Container className='mx-auto col-md-12 pt-3'>
@@ -52,7 +52,7 @@ const PostBlock: FC<PostBlockProps> = ({id}) => {
             </p>
             <p
                 className={cl.card_btn}
-                onClick={() => navigate('/users/' + user?.id)}>
+                onClick={() => navigate('/react-ts-redux-placeholder/users/' + user?.id)}>
                 {user?.name}
             </p>
         </Container>
