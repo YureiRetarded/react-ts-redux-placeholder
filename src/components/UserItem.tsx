@@ -20,10 +20,10 @@ const UserItem: FC<UserItemProps> = (user) => {
                 {user.user.name ?
                     <Card.Title
                         className={cl.card_btn}
-                        onClick={() => navigate('/react-ts-redux-placeholder/users/' + user.user.id)}>{user.user.name}</Card.Title> :
+                        onClick={() => navigate('/users/' + user.user.id)}>{user.user.name}</Card.Title> :
                     <Card.Title
                         className={cl.card_btn}
-                        onClick={() => navigate('/react-ts-redux-placeholder/users/' + user.user.id)}>Name is undefined</Card.Title>
+                        onClick={() => navigate('/users/' + user.user.id)}>Name is undefined</Card.Title>
                 }
 
                 <Card.Text>

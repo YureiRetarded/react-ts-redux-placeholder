@@ -15,7 +15,7 @@ const AlbumItem: FC<AlbumItemProps> = (album) => {
         <Card>
             <Card.Body>
                 <Card.Title className={cl.card_btn}
-                            onClick={() => navigate('/react-ts-redux-placeholder/users/' + album.album.userId + '/album/' + album.album.id)}>
+                            onClick={() => navigate('/users/' + album.album.userId + '/album/' + album.album.id)}>
                     {album.album.title}
                 </Card.Title>
             </Card.Body>

@@ -11,7 +11,7 @@ const NavbarReact: FC = () => {
                 <Navbar.Toggle aria-controls='navbar-nav'/>
                 <Container className={cl.wrapper}>
                     <Navbar.Collapse id="navbar-nav" className='px-3'>
-                        <LinkContainer to='/react-ts-redux-placeholder/'>
+                        <LinkContainer to='/'>
                             <Navbar.Brand>
                                 <img
                                     alt=""
@@ -23,10 +23,10 @@ const NavbarReact: FC = () => {
                             </Navbar.Brand>
                         </LinkContainer>
                         <Nav className='me-auto'>
-                            <LinkContainer to='/react-ts-redux-placeholder/posts'>
+                            <LinkContainer to='/posts'>
                                 <Nav.Link>Posts</Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to='/react-ts-redux-placeholder/users'>
+                            <LinkContainer to='/users'>
                                 <Nav.Link>Users</Nav.Link>
                             </LinkContainer>
                         </Nav>

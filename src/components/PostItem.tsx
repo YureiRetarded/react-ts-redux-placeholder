@@ -35,10 +35,10 @@ const PostItem: FC<PostItemProps> = (post) => {
                 {post.post.title ?
                     <Card.Title
                         className={cl.card_btn}
-                        onClick={() => navigate('/react-ts-redux-placeholder/posts/' + post.post.id)}>№{post.post.id} {post.post.title}</Card.Title> :
+                        onClick={() => navigate('/posts/' + post.post.id)}>№{post.post.id} {post.post.title}</Card.Title> :
                     <Card.Title
                         className={cl.card_btn}
-                        onClick={() => navigate('/react-ts-redux-placeholder/posts/' + post.post.id)}>{post.post.id} PostTitle is
+                        onClick={() => navigate('/posts/' + post.post.id)}>{post.post.id} PostTitle is
                         undefined</Card.Title>
                 }
 
@@ -46,7 +46,7 @@ const PostItem: FC<PostItemProps> = (post) => {
                 {post.post.body ?
                     <Card.Text
                         className={cl.card_btn}
-                        onClick={() => navigate('/react-ts-redux-placeholder/posts/' + post.post.id)}>
+                        onClick={() => navigate('/posts/' + post.post.id)}>
                         {post.post.body}
                     </Card.Text> :
                     <Card.Text>
@@ -57,7 +57,7 @@ const PostItem: FC<PostItemProps> = (post) => {
                 {user?.name ?
                     <Card.Text
                         className={cl.card_btn}
-                        onClick={() => navigate('/react-ts-redux-placeholder/users/' + post.post.userId)}>
+                        onClick={() => navigate('/users/' + post.post.userId)}>
                         {user?.name}
                     </Card.Text> :
                     <Card.Text>

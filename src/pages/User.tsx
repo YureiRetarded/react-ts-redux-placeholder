@@ -18,7 +18,7 @@ const User: FC = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (checkInputId(id) == 'incorrect')
-            navigate('/react-ts-redux-placeholder/users/not_found_user')
+            navigate('/users/not_found_user')
     }, [])
     if (checkInputId(id) != 'incorrect') {
         return (

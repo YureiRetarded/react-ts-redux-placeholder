@@ -16,7 +16,7 @@ const Post: FC = () => {
     const navigate = useNavigate()
     useEffect(() => {
         if (checkInputId(id) == 'incorrect')
-            navigate('/react-ts-redux-placeholder/posts/not_found_post')
+            navigate('/posts/not_found_post')
     }, [])
     if (checkInputId(id) != 'incorrect') {
         return (

@@ -15,7 +15,7 @@ const UserBlock: FC<UserBlockProps> = ({userId}) => {
         fetchUser(userId)
     }, [])
     if (error === '404') {
-        navigate('/react-ts-redux-placeholder/users/not_found_user')
+        navigate('/users/not_found_user')
     }
     return (
         <div>

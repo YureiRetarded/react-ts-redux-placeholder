@@ -11,15 +11,15 @@ import NotFoundUser from "../../pages/NotFoundUser";
 
 
 export const publicRoutes = [
-    {path: '/react-ts-redux-placeholder/', element: <Home/>},
-    {path: '/react-ts-redux-placeholder/users', element: <Users/>},
-    {path: '/react-ts-redux-placeholder/users/:id', element: <User/>},
-    {path: '/react-ts-redux-placeholder/users/:userId/album/:albumId', element: <Photos/>},
-    {path: '/react-ts-redux-placeholder/users/:userId/album/:albumId/:photoId', element: <Photo/>},
-    {path: '/react-ts-redux-placeholder/posts', element: <Posts/>},
-    {path: '/react-ts-redux-placeholder/posts/:id', element: <Post/>},
-    {path: '/react-ts-redux-placeholder/posts/not_found_post', element: <NotFoundPost/>},
-    {path: '/react-ts-redux-placeholder/users/not_found_user', element: <NotFoundUser/>},
+    {path: '/', element: <Home/>},
+    {path: '/users', element: <Users/>},
+    {path: '/users/:id', element: <User/>},
+    {path: '/users/:userId/album/:albumId', element: <Photos/>},
+    {path: '/users/:userId/album/:albumId/:photoId', element: <Photo/>},
+    {path: '/posts', element: <Posts/>},
+    {path: '/posts/:id', element: <Post/>},
+    {path: '/posts/not_found_post', element: <NotFoundPost/>},
+    {path: '/users/not_found_user', element: <NotFoundUser/>},
     {path: '*', element: <NotFoundPage/>}
 
 ]
