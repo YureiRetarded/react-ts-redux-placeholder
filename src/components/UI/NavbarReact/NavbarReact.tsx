@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import cl from './NavbarReact.module.scss'
 import {LinkContainer} from "react-router-bootstrap";
+import logo from "../../../assets/logo.svg";
 
 const NavbarReact: FC = () => {
     return (
@@ -10,11 +11,11 @@ const NavbarReact: FC = () => {
                 <Navbar.Toggle aria-controls='navbar-nav'/>
                 <Container className={cl.wrapper}>
                     <Navbar.Collapse id="navbar-nav" className='px-3'>
-                        <LinkContainer to='/'>
+                        <LinkContainer to='/react-ts-redux-placeholder/'>
                             <Navbar.Brand>
                                 <img
                                     alt=""
-                                    src="/logo.svg"
+                                    src={logo}
                                     width="30"
                                     height="30"
                                     className="d-inline-block align-top"
@@ -22,10 +23,10 @@ const NavbarReact: FC = () => {
                             </Navbar.Brand>
                         </LinkContainer>
                         <Nav className='me-auto'>
-                            <LinkContainer to='/posts'>
+                            <LinkContainer to='/react-ts-redux-placeholder/posts'>
                                 <Nav.Link>Posts</Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to='users'>
+                            <LinkContainer to='/react-ts-redux-placeholder/users'>
                                 <Nav.Link>Users</Nav.Link>
                             </LinkContainer>
                         </Nav>

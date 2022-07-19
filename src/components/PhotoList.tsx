@@ -33,7 +33,7 @@ const PhotoList: FC<PhotoListProps> = ({albumId, userId}) => {
 
     }, [loading])
     if (error === '404') {
-        navigate('/users/' + userId)
+        navigate('/react-ts-redux-placeholder/users/' + userId)
     }
     return (
         <Container className='p-0'>

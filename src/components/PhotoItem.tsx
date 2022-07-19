@@ -17,7 +17,7 @@ const PhotoItem: FC<PhotoItemProps> = ({photo,userId}) => {
             text={"dark"}
             style={{maxWidth: 200}}
             className={cl.card_btn}
-            onClick={() => navigate('/users/' + userId + '/album/' + photo.albumId + '/' + photo.id)}
+            onClick={() => navigate('/react-ts-redux-placeholder/users/' + userId + '/album/' + photo.albumId + '/' + photo.id)}
         >
             <Card>
                 <Card.Img variant="top" src={photo.thumbnailUrl} alt="Card image"/>
