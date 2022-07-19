@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-ts-redux-placeholder/static/css/main.462d69e5.css",
+    "main.js": "/react-ts-redux-placeholder/static/js/main.0135266d.js",
+    "static/media/duck.gif": "/react-ts-redux-placeholder/static/media/duck.9ccfa3ac82cc4b95f918.gif",
+    "index.html": "/react-ts-redux-placeholder/index.html",
+    "main.462d69e5.css.map": "/react-ts-redux-placeholder/static/css/main.462d69e5.css.map",
+    "main.0135266d.js.map": "/react-ts-redux-placeholder/static/js/main.0135266d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.462d69e5.css",
+    "static/js/main.0135266d.js"
+  ]
+}
