@@ -2,7 +2,6 @@ import {Dispatch} from "redux";
 import {CommentsAction, CommentsActionTypes} from '../../types/comment'
 import axios from "axios";
 import {getPageCount} from "../../utils/pages";
-import {PostsActionTypes} from "../../types/post";
 
 export const fetchComments = (PostId: number, limit: number, page: number) => {
     return async (dispatch: Dispatch<CommentsAction>) => {

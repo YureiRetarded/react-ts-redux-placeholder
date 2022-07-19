@@ -1,10 +1,9 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
+import React, {FC, useEffect, useRef} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import CommentItem from "./CommentItem";
 import cl from "./styles/PostList.module.scss";
 import {Container, Spinner, Stack} from "react-bootstrap";
-import {IUser} from "../types/user";
 
 
 interface PostCommentListProps {

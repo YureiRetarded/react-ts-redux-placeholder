@@ -4,13 +4,11 @@ import {useNavigate, useParams} from "react-router-dom";
 import {Container} from "react-bootstrap";
 import UserBlock from "../components/UserBlock";
 import {checkInputId} from "../utils/checking";
-import PostBlock from "../components/PostBlock";
-import PostCommentList from "../components/PostCommentList";
 import UserContentButton from "../components/UserContentButton";
 import UserContent from "../components/UserContent";
 
 const User: FC = () => {
-    const {clearUser, setDefault, clearAllPosts,clearAllAlbums} = useActions()
+    const {clearUser, setDefault, clearAllPosts, clearAllAlbums} = useActions()
     clearAllPosts()
     clearUser()
     setDefault()

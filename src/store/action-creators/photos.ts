@@ -3,11 +3,22 @@ import {PhotosAction, PhotosActionTypes} from "../../types/photo";
 import axios from "axios";
 import {getPageCount} from "../../utils/pages";
 
-export const fetchPhotosByAlbum = (limit: number, page: number, albumId: number) => {
+export const fetchPhotosByAlbum = (limit: number, page: number, albumId: number, userId: number) => {
     return async (dispatch: Dispatch<PhotosAction>) => {
         try {
             dispatch({type: PhotosActionTypes.FETCH_PHOTOS})
             {
+                const responseAlbum = await axios.get('https://jsonplaceholder.typicode.com/albums', {
+                    params: {
+                        userId: userId,
+                        id: albumId
+                    }
+                })
+                if (responseAlbum.data.length === 0) {
+                    dispatch({type: PhotosActionTypes.FETCH_PHOTOS_ERROR, payload: '404'})
+                    throw false
+                }
+
                 const response = await axios.get('https://jsonplaceholder.typicode.com/photos', {
                     params: {
                         albumId: albumId,
@@ -15,6 +26,7 @@ export const fetchPhotosByAlbum = (limit: number, page: number, albumId: number)
                         _page: page
                     }
                 })
+
                 dispatch({type: PhotosActionTypes.SET_TOTAL_COUNT, payload: response.headers['x-total-count']})
                 dispatch({type: PhotosActionTypes.FETCH_PHOTOS_SUCCESS, payload: response})
                 dispatch({
@@ -23,7 +35,7 @@ export const fetchPhotosByAlbum = (limit: number, page: number, albumId: number)
                 })
             }
         } catch (e) {
-            dispatch({type: PhotosActionTypes.FETCH_PHOTOS_ERROR, payload: 'Ошибка при получение постов!'})
+            dispatch({type: PhotosActionTypes.FETCH_PHOTOS_ERROR, payload: '404'})
         }
     }
 }

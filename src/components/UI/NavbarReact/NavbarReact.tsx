@@ -1,20 +1,27 @@
 import React, {FC} from 'react';
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import cl from './NavbarReact.module.scss'
-import {Link} from "react-router-dom";
 import {LinkContainer} from "react-router-bootstrap";
 
 const NavbarReact: FC = () => {
     return (
         <Navbar bg='white'>
             <Container className='p-0 mx-auto justify-content-center'>
-                <Navbar.Toggle aria-controls='basic-navbar-nav'/>
+                <Navbar.Toggle aria-controls='navbar-nav'/>
                 <Container className={cl.wrapper}>
-                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Navbar.Collapse id="navbar-nav" className='px-3'>
+                        <LinkContainer to='/'>
+                            <Navbar.Brand>
+                                <img
+                                    alt=""
+                                    src="/logo.svg"
+                                    width="30"
+                                    height="30"
+                                    className="d-inline-block align-top"
+                                />
+                            </Navbar.Brand>
+                        </LinkContainer>
                         <Nav className='me-auto'>
-                            <LinkContainer to='/'>
-                                <Nav.Link>Home</Nav.Link>
-                            </LinkContainer>
                             <LinkContainer to='/posts'>
                                 <Nav.Link>Posts</Nav.Link>
                             </LinkContainer>

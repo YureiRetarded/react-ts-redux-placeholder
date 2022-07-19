@@ -7,11 +7,11 @@ import UserItem from "./UserItem";
 
 const UsersList: FC = () => {
     const {users, loading, error, totalCount, totalPage, page, limit} = useTypedSelector(state => state.users)
-    const {fetchUsers,setUserPage} = useActions()
+    const {fetchUsers, setUserPage} = useActions()
     const observer = useRef<IntersectionObserver>();
     const targetRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
-        fetchUsers(limit,page)
+        fetchUsers(limit, page)
     }, [page])
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const UsersList: FC = () => {
 
     return (
         <Container className='p-0'>
-            <Stack gap={3}  className='col-md-12 mx-auto pt-3'>
+            <Stack gap={3} className='col-md-12 mx-auto pt-3'>
                 {users.map(user =>
                     <UserItem key={user.id} user={user}/>
                 )}

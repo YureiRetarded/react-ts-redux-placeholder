@@ -1,5 +1,4 @@
 import {CommentsAction, CommentsActionTypes, CommentsState} from "../../types/comment";
-import {Axios} from "axios";
 
 const initialState: CommentsState = {
     comments: [],
