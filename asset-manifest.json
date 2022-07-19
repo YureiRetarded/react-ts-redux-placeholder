@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.462d69e5.css",
-    "main.js": "/static/js/main.a4b2ae57.js",
-    "static/media/duck.gif": "/static/media/duck.9ccfa3ac82cc4b95f918.gif",
-    "static/media/logo.svg": "/static/media/logo.2cd5a6524416544d1173f13af78e3fa7.svg",
-    "index.html": "/index.html",
-    "main.462d69e5.css.map": "/static/css/main.462d69e5.css.map",
-    "main.a4b2ae57.js.map": "/static/js/main.a4b2ae57.js.map"
+    "main.css": "/react-ts-redux-placeholder/static/css/main.462d69e5.css",
+    "main.js": "/react-ts-redux-placeholder/static/js/main.5824126e.js",
+    "static/media/duck.gif": "/react-ts-redux-placeholder/static/media/duck.9ccfa3ac82cc4b95f918.gif",
+    "static/media/logo.svg": "/react-ts-redux-placeholder/static/media/logo.2cd5a6524416544d1173f13af78e3fa7.svg",
+    "index.html": "/react-ts-redux-placeholder/index.html",
+    "main.462d69e5.css.map": "/react-ts-redux-placeholder/static/css/main.462d69e5.css.map",
+    "main.5824126e.js.map": "/react-ts-redux-placeholder/static/js/main.5824126e.js.map"
   },
   "entrypoints": [
     "static/css/main.462d69e5.css",
-    "static/js/main.a4b2ae57.js"
+    "static/js/main.5824126e.js"
   ]
 }
