@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Container, Nav, Navbar} from "react-bootstrap";
+import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import cl from './NavbarReact.module.scss'
 import {LinkContainer} from "react-router-bootstrap";
 
@@ -29,6 +29,7 @@ const NavbarReact: FC = () => {
                                 <Nav.Link>Users</Nav.Link>
                             </LinkContainer>
                         </Nav>
+                        <Button href="https://github.com/YureiRetarded">GitHub</Button>
                     </Navbar.Collapse>
                 </Container>
             </Container>
