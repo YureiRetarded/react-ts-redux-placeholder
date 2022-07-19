@@ -2,7 +2,6 @@ import {Dispatch} from "redux";
 import {CommentsAction, CommentsActionTypes} from '../../types/comment'
 import axios from "axios";
 import {getPageCount} from "../../utils/pages";
-import {PostsActionTypes} from "../../types/post";
 
 export const fetchComments = (PostId: number, limit: number, page: number) => {
     return async (dispatch: Dispatch<CommentsAction>) => {
@@ -11,7 +10,7 @@ export const fetchComments = (PostId: number, limit: number, page: number) => {
             {
                 const response = await axios.get('https://jsonplaceholder.typicode.com/comments', {
                     params: {
-                        postId:PostId,
+                        postId: PostId,
                         _limit: limit,
                         _page: page
                     }

@@ -22,13 +22,36 @@ export const fetchPosts = (limit: number, page: number) => {
                 })
             }
         } catch (e) {
-            dispatch({type: PostsActionTypes.FETCH_POSTS_ERROR, payload: 'Ошибка при получение пользователей!'})
+            dispatch({type: PostsActionTypes.FETCH_POSTS_ERROR, payload: 'Ошибка при получение постов!'})
+        }
+    }
+}
+export const fetchPostsByUser = (limit: number, page: number, userId: number) => {
+    return async (dispatch: Dispatch<PostsAction>) => {
+        try {
+            dispatch({type: PostsActionTypes.FETCH_POSTS})
+            {
+                const response = await axios.get('https://jsonplaceholder.typicode.com/posts', {
+                    params: {
+                        userId: userId,
+                        _limit: limit,
+                        _page: page
+                    }
+                })
+                dispatch({type: PostsActionTypes.SET_TOTAL_COUNT, payload: response.headers['x-total-count']})
+                dispatch({type: PostsActionTypes.FETCH_POSTS_SUCCESS, payload: response})
+                dispatch({
+                    type: PostsActionTypes.SET_TOTAL_PAGE,
+                    payload: getPageCount(parseInt(response.headers['x-total-count']), limit)
+                })
+            }
+        } catch (e) {
+            dispatch({type: PostsActionTypes.FETCH_POSTS_ERROR, payload: 'Ошибка при получение постов!'})
         }
     }
 }
 
-
-export function clearAllPosts():PostsAction{
+export function clearAllPosts(): PostsAction {
     return {type: PostsActionTypes.CLEAR_POSTS, payload: []}
 }
 

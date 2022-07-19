@@ -1,8 +1,7 @@
 import {PostAction, PostActionTypes, PostState} from "../../types/post";
-import {Axios} from "axios";
 
 const initialState: PostState = {
-    post:{
+    post: {
         id: 0,
         userId: 0,
         title: '',
@@ -21,7 +20,7 @@ export const postReducer = (state = initialState, action: PostAction): PostState
         case PostActionTypes.FETCH_POST_ERROR:
             return {...state, loading: false, error: action.payload}
         case PostActionTypes.CLEAR_POST:
-            return {...state, post: initialState.post}
+            return {...state, post: initialState.post, error: null}
         default:
             return state
     }

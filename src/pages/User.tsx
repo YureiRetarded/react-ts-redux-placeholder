@@ -1,37 +1,37 @@
 import React, {FC, useEffect} from 'react';
-import {useParams} from "react-router-dom";
-import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
-import {IUser} from "../types/user";
+import {useNavigate, useParams} from "react-router-dom";
+import {Container} from "react-bootstrap";
+import UserBlock from "../components/UserBlock";
+import {checkInputId} from "../utils/checking";
+import UserContentButton from "../components/UserContentButton";
+import UserContent from "../components/UserContent";
 
-type UserItemPageParams = {
-    id: string
-}
 const User: FC = () => {
-    const params = useParams<UserItemPageParams>()
-    const {users,loading,error}=useTypedSelector(state => state.user)
-    useEffect(()=>{
+    const {clearUser, setDefault, clearAllPosts, clearAllAlbums} = useActions()
+    clearAllPosts()
+    clearUser()
+    setDefault()
+    clearAllAlbums()
 
-    },[])
-    if (loading){
+    const {id} = useParams();
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (checkInputId(id) == 'incorrect')
+            navigate('/users/not_found_user')
+    }, [])
+    if (checkInputId(id) != 'incorrect') {
         return (
-            <h1>Идёт загрузка...</h1>
+            <Container className='col-md-12 mx-auto pt-3'>
+                <UserBlock userId={parseInt(id || '1')}/>
+                <UserContentButton/>
+                <UserContent userId={parseInt(id || '1')}/>
+            </Container>
         )
     }
-    if(error){
-        return (
-            <h1>Произошла ошибка</h1>
-        )
-    }
-
     return (
-
-        <div>
-            <div>
-                {users[0]?.name}
-            </div>
-        </div>
-    );
+        <div>Ошибка при отображение пользователя</div>
+    )
 };
 
 export default User;

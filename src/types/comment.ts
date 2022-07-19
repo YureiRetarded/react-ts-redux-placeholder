@@ -1,22 +1,23 @@
 import {AxiosResponse} from "axios";
 
 export interface IComment {
-    id:number;
-    postId:number;
-    name:string;
-    email:string;
-    body:string;
+    id: number;
+    postId: number;
+    name: string;
+    email: string;
+    body: string;
 }
 
-export interface CommentsState{
-    comments:IComment[],
-    loading:boolean,
-    error:null|string
+export interface CommentsState {
+    comments: IComment[],
+    loading: boolean,
+    error: null | string
     page: number;
     limit: number;
     totalCount: number | string;
     totalPage: number | string;
 }
+
 export enum CommentsActionTypes {
     FETCH_COMMENTS = 'FETCH_COMMENTS',
     FETCH_COMMENTS_SUCCESS = 'FETCH_COMMENTS_SUCCESS',

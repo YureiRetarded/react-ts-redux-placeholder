@@ -7,16 +7,17 @@ import {useNavigate} from "react-router-dom";
 import cl from "./styles/PostItem.module.scss";
 import {Container} from "react-bootstrap";
 
-interface PostBlockProps{
-    id:number
+interface PostBlockProps {
+    id: number
 }
 
-const PostBlock:FC<PostBlockProps>=({id})=>{
+const PostBlock: FC<PostBlockProps> = ({id}) => {
     const navigate = useNavigate()
-    const{post,loading,error}=useTypedSelector(state=> state.post)
-    const{fetchPost}=useActions()
+    const {post, loading, error} = useTypedSelector(state => state.post)
+    const {fetchPost} = useActions()
     const [user, setUser] = useState<IUser>()
-    async function fetching(userId:any) {
+
+    async function fetching(userId: any) {
         try {
             const response = await UserService.getUserById(userId)
             setUser(response)
@@ -24,21 +25,25 @@ const PostBlock:FC<PostBlockProps>=({id})=>{
             console.log(e)
         }
     }
-    useEffect(()=> {
-        fetchPost(id)
-    },[])
-    useEffect(()=> {
 
-        if(post.userId!=0){
+    useEffect(() => {
+        fetchPost(id)
+    }, [])
+    useEffect(() => {
+
+        if (post.userId != 0) {
             fetching(post.userId).then()
         }
-    },[post.userId])
+    }, [post.userId])
 
 
-    useEffect(()=>{
-    },[loading])
-    return(
-        <Container className='mx-auto col-md-10 pt-3'>
+    useEffect(() => {
+    }, [loading])
+    if (error === '404') {
+        navigate('/posts/not_found_post')
+    }
+    return (
+        <Container className='mx-auto col-md-12 pt-3'>
             <h2>
                 {post?.title}
             </h2>
